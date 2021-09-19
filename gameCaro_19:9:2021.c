@@ -46,7 +46,7 @@ int main() {
     printf("ban caro co hop ly khong? %d\n", check_4);
     int result_3 = checkCaro(board_3);
     printf("Who is win ? Player %d\n", result_3);
-    // new caro
+    // new caro_ not value
      int board_4[3][3] = {
         {0, 0, 0},
         {0, 0, 0},

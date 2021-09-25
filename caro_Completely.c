@@ -6,6 +6,7 @@ int play(int player, int x, int y, int board[3][3]);
 //
 
 int check_ = 1;
+int v = 1;
 int main() {
     // correct 1
      int board[3][3] = {
@@ -21,9 +22,11 @@ int main() {
     play(1, 0, 0, board);
     play(2, 1, 2, board);
     play(1, 2, 4, board);// wrong
-    play(2, 0, 2, board);// wrong
-    
-    ///
+    play(2, 0, 2, board);// player 2 don't play second turn consecutively.
+    play(1, 0, 2, board);
+    play(1, 2, 2, board);  // player 1 don't play second turn consecutively
+    play(2, 2, 1, board);
+    play(1, 2, 2, board); 
     int result = checkCaro(board);
     printf("Who is win ? Player %d\n", result);
 }
@@ -154,6 +157,12 @@ int play(int player, int x, int y, int board[3][3]) {
         check_ = 0;
         return check_;
     }
+    // not turn consecutively
+    if (player != v) {
+        printf("Wrong!!!\n");
+        return check_;
+        
+    }
     //
     
     // change in board
@@ -168,11 +177,17 @@ int play(int player, int x, int y, int board[3][3]) {
     int check_1 = checkValid(board);
     printf("ban caro co hop ly khong? %d\n ", check_1);
     printf("\n");
-    //---
+    //--- checkWinner
+    int result = checkCaro(board);
+    if(result != 0) {
+        return check_;
+    }
     if (player == 1) {
         printf("Next, Turn player 2:\n");
+        v = 2;
     } else if (player == 2) {
         printf("Next, Turn player 1:\n");
+        v = 1;
     }
     return check_;
 }

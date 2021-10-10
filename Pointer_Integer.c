@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 #include <stdio.h>
 
 int main() {
@@ -19,5 +21,4 @@ int main() {
     printf("The value of &a is now %p\n", &a);
     printf("The value of pointer_to_a is %p\n", pointer_to_a);
     printf("The value of a is also  %d\n",  *pointer_to_a);
-
 }

@@ -7,6 +7,22 @@ typedef struct {
 
 } HocSinh;
 
+float average_all(HocSinh duong_class[3])
+{   
+    float avg =0;
+    int n = 0;
+    for(int j = 0; j < 3; j++)
+    {
+        HocSinh grade = duong_class[j];
+
+            avg = avg + grade.english_grade + grade.math_grade +grade.literature_grade ; 
+            n += 3;  
+          
+    }
+    avg = avg / n;
+    return avg;
+}
+
 int main()
 {
     HocSinh student_1;
@@ -36,9 +52,17 @@ int main()
         student_2,
         student_3
     };
+
     for(int i = 0; i < 3; i++) 
     {
         HocSinh student = duong_class[i];
         printf("name= %s, math_grade= %f, english_grade= %f, literature_grade= %f\n", student.name, student.math_grade, student.english_grade,student.literature_grade);
     }
+    //
+   
+    float result = average_all(duong_class);
+    printf("average of class: %f", result);
+
+    return 0;
+
 }

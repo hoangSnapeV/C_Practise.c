@@ -9,18 +9,19 @@ typedef struct
 
 int main()
 {   
-    printf("start");
-    node * head = NULL;
-    node * first = NULL;
-
+    
+    node * head;
+    
     printf("address = %p\n", head);
     head = (node *)malloc(sizeof (node));
     printf("address after malloc = %p\n", head);
+    node * node1 = head;
     //
 
     //head->grade = 9;
-    (*head).grade = 9.5;
+    (*node1).grade = 9.5;
     head->next = NULL;
+    //printf("grade = %.1f \n", head->grade);
 
     //printf("grade of head= %f\n", head->grade);
     //printf("next of head= %p\n", head->next);
@@ -45,13 +46,41 @@ int main()
     int i = 0;
     while (itemOfLinklist != NULL)
     {
-        printf("grade %d of = %.1f \n", i, itemOfLinklist->grade);
+        printf("grade %d = %.1f \n", i, itemOfLinklist->grade);
         printf("index = %d next of = %p\n", i, itemOfLinklist->next);
                                                                                                                                            
         itemOfLinklist = itemOfLinklist->next;
         i++;  
     }
-    printf("size = %d\n", i);
-         
-    return 0;                           
+    //printf("size = %d\n", i);
+
+//----------- romove nope 4
+    node * itemforRemove = head;
+    int index = 0;
+    int indexNeedRomove = 3;
+    while (itemforRemove != NULL)
+    {
+        if(index == indexNeedRomove - 1){
+            node* remove = itemforRemove->next;
+            itemforRemove->next = remove->next;
+            break;
+        }
+        //
+        itemforRemove = itemforRemove->next;
+        index++;//1 //2
+    }
+    printf("\n");
+    itemOfLinklist = head;
+    i = 0;
+    while (itemOfLinklist != NULL)
+    {
+        printf("grade %d = %.1f \n", i, itemOfLinklist->grade);
+        printf("index = %d next of = %p\n", i, itemOfLinklist->next);
+                                                                                                                                           
+        itemOfLinklist = itemOfLinklist->next;
+        i++;  
+    }
+    return 0;       
+
 }
+

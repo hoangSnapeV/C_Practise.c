@@ -1,9 +1,9 @@
 #include <stdio.h>
 #define dam 1609
 
-int main() 
+float main() 
 {
-    int num = 1;
+    int num;
     scanf("%d", &num);
     float result = num * dam;
     printf("Result = %f", result);

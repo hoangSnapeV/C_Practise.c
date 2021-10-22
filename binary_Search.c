@@ -22,20 +22,20 @@ int binarySearch(int numbers[10], int findNumber)
     int leftIndex = 0;
     int rightIndex = size - 1;
     
-    while (leftIndex <= rightIndex) 
+    while (leftIndex <= rightIndex) //find =1
     {   
-        int midIndex = (leftIndex + rightIndex) / 2;
-        if (findNumber == numbers[midIndex])
+        int midIndex = (leftIndex + rightIndex) / 2; // midIndex = 4, 1,0
+        if (findNumber == numbers[midIndex])// value = 5,2,1
         {
             indexFound = midIndex;
             break;
         } else if (findNumber < numbers[midIndex])
         {
-            rightIndex = midIndex - 1;
+            rightIndex = midIndex - 1; //rightIndex =3, 1
         }
         else
         {
-            leftIndex = midIndex + 1;
+            leftIndex = midIndex + 1;// leftIndex = 5 , 8
         }
     }
     return indexFound;

@@ -30,6 +30,7 @@ int examplePointer()
     // numCopy -> address 0x3, value = 12, data-type = int
   
     num = *ptr; 
+    //printf("%d", num);
     // num -> address 0x1, value = 12, data-type = int
     // ptr -> address 0x2, value = 0x3, data-type = int *
     // numCopy -> address 0x3, value = 12, data-type = int
@@ -41,6 +42,9 @@ int examplePointer()
     // ptrCopy -> address 0x4, value = 0x1, data-type = int *
     
     int **ptr2 = &ptr;    
+    printf("a = %p\n", &ptr);
+    printf("value ptr2 = %p", *ptr2);
+
     // num -> address 0x1, value = 12, data-type = int
     // ptr -> address 0x2, value = 0x3, data-type = int *
     // numCopy -> address 0x3, value = 12, data-type = int
